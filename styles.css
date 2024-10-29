@@ -1,0 +1,197 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a, #4a0000);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    display: flex;
+    gap: 2rem;
+    max-width: 1000px;
+    width: 90%;
+}
+
+
+.advertisement {
+    position: absolute;
+    bottom: 20px;
+    background: linear-gradient(45deg, #1a1a1a, #4a0000);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    text-align: center;
+}
+
+.advertisement p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.advertisement a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.advertisement a:hover {
+    color: #ff9900;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+
+.wheel-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wheel {
+    border: 8px solid #ffd700;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+#spin-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #ffd700, #ff9900);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+#spin-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.input-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+}
+
+#option-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #ffd700;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+#option-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#add-option, #clear-options {
+    background: linear-gradient(45deg, #ffd700, #ff9900);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#add-option:hover, #clear-options:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.options-list {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.options-list h3 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#options {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#options li {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+}
+
+.wheel-container {
+    animation: neon-glow 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wheel-container {
+        width: 100%;
+    }
+    
+    #wheel {
+        width: 300px;
+        height: 300px;
+    }
+}
+
